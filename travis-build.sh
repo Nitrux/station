@@ -28,9 +28,11 @@ mk-build-deps -i -t "apt-get --yes" -r
 
 git clone --single-branch --branch v2.0 https://invent.kde.org/maui/station.git
 
+rm -rf station/debian
+
 mv station/* .
 
-rm -rf station debian LICENSE
+rm -rf station LICENSE
 
 ### Build Deb
 
