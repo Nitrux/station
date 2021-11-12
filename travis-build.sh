@@ -103,7 +103,7 @@ checkinstall -D -y \
 	--pkgsource=station \
 	--pakdir=../.. \
 	--maintainer=uri_herrera@nxos.org \
-	--provides=index \
+	--provides=station \
 	--requires="libc6,libgcc-s1,libkf5coreaddons5,libkf5i18n5,libqt5core5a,libqt5gui5,libqt5qml5,libqt5widgets5,libstdc++6,mauikit \(\>= 2.1.0\),mauikit-filebrowsing \(\>= 2.1.0\),qml-module-qmltermwidget" \
 	--nodoc \
 	--strip=no \
