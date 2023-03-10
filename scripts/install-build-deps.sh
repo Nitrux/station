@@ -31,7 +31,6 @@ $APT_COMMAND install -qy --no-install-recommends \
     libqt5svg5-dev \
     libwayland-dev \
     lintian \
-    qml-module-qmltermwidget \
     qtbase5-dev \
     qtdeclarative5-dev \
     qtquickcontrols2-5-dev \
