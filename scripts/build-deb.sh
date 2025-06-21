@@ -73,7 +73,7 @@ make install
 checkinstall -D -y \
 	--install=no \
 	--fstrans=yes \
-	--pkgname=station-git \
+	--pkgname=station\
 	--pkgversion="$PACKAGE_VERSION" \
 	--pkgarch="$(dpkg --print-architecture)" \
 	--pkgrelease="1" \
@@ -83,7 +83,7 @@ checkinstall -D -y \
 	--pakdir=. \
 	--maintainer=uri_herrera@nxos.org \
 	--provides=station \
-	--requires="mauikit-git \(\>= 4.0.2\),mauikit-filebrowsing-git \(\>= 4.0.2\),mauikit-terminal-git \(\>= 4.0.2\),qml6-module-qtcore,qml6-module-qtquick-effects" \
+	--requires="mauikit \(\>= 4.0.2\),mauikit-filebrowsing \(\>= 4.0.2\),mauikit-terminal \(\>= 4.0.2\),qml6-module-qtcore,qml6-module-qtquick-effects" \
 	--nodoc \
 	--strip=no \
 	--stripso=yes \
