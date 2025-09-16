@@ -3,7 +3,7 @@ name: Station Deb
 on:
   workflow_dispatch:
     inputs:
-      vvaveBranch:
+      stationBranch:
         description: 'Station Branch'
         required: true
         type: string
@@ -37,7 +37,7 @@ jobs:
       - run: ./scripts/build-deb.sh
         env:
           PACKAGE_VERSION: ${{ inputs.packageVersion }}
-          STATION_BRANCH: ${{ inputs.vvaveBranch }}
+          STATION_BRANCH: ${{ inputs.stationBranch }}
           TARGET_ARCH: amd64
       - uses: actions/upload-artifact@v4
         with:
@@ -63,7 +63,7 @@ jobs:
       - run: ./scripts/build-deb.sh
         env:
           PACKAGE_VERSION: ${{ inputs.packageVersion }}
-          STATION_BRANCH: ${{ inputs.vvaveBranch }}
+          STATION_BRANCH: ${{ inputs.stationBranch }}
           TARGET_ARCH: arm64
       - uses: actions/upload-artifact@v4
         with:
