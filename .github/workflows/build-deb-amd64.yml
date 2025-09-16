@@ -3,17 +3,17 @@ name: Station Deb
 on:
   workflow_dispatch:
     inputs:
-      vvaveBranch:
+      stationBranch:
         description: 'Station Branch'
         required: true
         type: string
       packageCloudRepo:
         description: 'Package Cloud Repo'
         required: true
-        default: 'mauikit'
+        default: 'zbkit'
         type: choice
         options:
-        - mauikit
+        - zbkit
       packageVersion:
         description: 'Package Version'
         required: true
@@ -23,7 +23,7 @@ jobs:
   build-amd64:
     runs-on: ubuntu-24.04
     container:
-      image: debian:testing
+      image: ubuntu:22.04
       env:
         DEBIAN_FRONTEND: noninteractive
         PACKAGECLOUD_TOKEN: ${{ secrets.PACKAGECLOUD_TOKEN }}
@@ -37,18 +37,18 @@ jobs:
       - run: ./scripts/build-deb.sh
         env:
           PACKAGE_VERSION: ${{ inputs.packageVersion }}
-          STATION_BRANCH: ${{ inputs.vvaveBranch }}
+          STATION_BRANCH: ${{ inputs.stationBranch }}
           TARGET_ARCH: amd64
       - uses: actions/upload-artifact@v4
         with:
           name: deb-package-amd64
           path: ./build/*.deb
-      - run: package_cloud push nitrux/${{ inputs.packageCloudRepo }}/debian/forky ./build/*.deb
+      - run: package_cloud push nitrux/${{ inputs.packageCloudRepo }}/debian/bookworm ./build/*.deb
 
   build-arm64:
     runs-on: ubuntu-24.04-arm
     container:
-      image: arm64v8/debian:testing
+      image: arm64v8/ubuntu:22.04
       env:
         DEBIAN_FRONTEND: noninteractive
         PACKAGECLOUD_TOKEN: ${{ secrets.PACKAGECLOUD_TOKEN }}
@@ -63,10 +63,10 @@ jobs:
       - run: ./scripts/build-deb.sh
         env:
           PACKAGE_VERSION: ${{ inputs.packageVersion }}
-          STATION_BRANCH: ${{ inputs.vvaveBranch }}
+          STATION_BRANCH: ${{ inputs.stationBranch }}
           TARGET_ARCH: arm64
       - uses: actions/upload-artifact@v4
         with:
           name: deb-package-arm64
           path: ./build/*.deb
-      - run: package_cloud push nitrux/${{ inputs.packageCloudRepo }}/debian/forky ./build/*.deb
+      - run: package_cloud push nitrux/${{ inputs.packageCloudRepo }}/debian/bookworm ./build/*.deb
