@@ -30,7 +30,7 @@ set -e
 
 # -- Download Source
 
-git clone --depth 1 --branch "$STATION_BRANCH" https://invent.kde.org/maui/maui-station.git
+git clone --depth 1 --branch "$STATION_BRANCH" https://github.com/Nitrux/maui-station.git
 
 
 # -- Compile Source
