@@ -77,7 +77,7 @@ Priority: optional
 Architecture: ${TARGET_ARCH}
 Maintainer: uri_herrera@nxos.org
 Provides: station
-Depends: qml6-module-qtquick-controls,qml6-module-qtquick-layouts,libkf6coreaddons6,libkf6i18n6,libqt6core6t64,libqt6dbus6,libqt6qml6,libqt6quick6,libqt6widgets6,mauikit (>= 4.0.4),mauikit-filebrowsing (>= 4.0.4),mauikit-terminal (>= 4.0.4),qml6-module-qtcore,qml6-module-qtquick-effects
+Depends: qml6-module-qtquick-controls,qml6-module-qtquick-layouts,libkf6coreaddons6,libkf6i18n6,libqt6core6t64,libqt6dbus6,libqt6qml6,libqt6quick6,libqt6widgets6,mauikit (>= 4.0.5),mauikit-filebrowsing (>= 4.0.5),mauikit-terminal (>= 4.0.5),qml6-module-qtcore,qml6-module-qtquick-effects
 Description: station
  station
 CONTROL
